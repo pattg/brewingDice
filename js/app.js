@@ -1,19 +1,20 @@
 const btnRoll = document.querySelector('.btn_roll');
 const btnSave = document.querySelector('.btn_save');
 
-btnRoll.addEventListener('click', () => {
-  roll();
-});
-btnSave.addEventListener('click', () => {
-  save();
-});
+document.addEventListener(
+  'DOMContentLoaded',
+  function() {
+    btnRoll.addEventListener('click', () => {
+      roll();
+    });
+    btnSave.addEventListener('click', () => {
+      save();
+    });
+  },
+  false
+);
 
-let randomOne = null;
-let randomTwo = null;
-let randomThree = null;
-let randomFour = null;
-let randomFive = null;
-let randomSix = null;
+let random = [];
 
 const diceOneArray = ['01', '02', '03', '04', '05', '06'];
 const diceTwoArray = ['01', '02', '03', '04', '05', '06'];
@@ -31,37 +32,34 @@ function roll() {
   const dice6 = document.querySelector('.dice6');
 
   if (!document.querySelector('.dice-1').checked) {
-    randomOne = Math.floor(Math.random() * 6) + 1;
-    dice1.src = `img/dice-${randomOne}.png`;
+    random[0] = Math.floor(Math.random() * 6) + 1;
+    dice1.src = `img/dice-${random[0]}.png`;
   }
   if (!document.querySelector('.dice-2').checked) {
-    randomTwo = Math.floor(Math.random() * 6) + 1;
-    dice2.src = `img/dice-${randomTwo}.png`;
+    random[1] = Math.floor(Math.random() * 6) + 1;
+    dice2.src = `img/dice-${random[1]}.png`;
   }
   if (!document.querySelector('.dice-3').checked) {
-    randomThree = Math.floor(Math.random() * 6) + 1;
-    dice3.src = `img/dice-${randomThree}.png`;
+    random[2] = Math.floor(Math.random() * 6) + 1;
+    dice3.src = `img/dice-${random[2]}.png`;
   }
   if (!document.querySelector('.dice-4').checked) {
-    randomFour = Math.floor(Math.random() * 6) + 1;
-    dice4.src = `img/dice-${randomFour}.png`;
+    random[3] = Math.floor(Math.random() * 6) + 1;
+    dice4.src = `img/dice-${random[3]}.png`;
   }
   if (!document.querySelector('.dice-5').checked) {
-    randomFive = Math.floor(Math.random() * 6) + 1;
-    dice5.src = `img/dice-${randomFive}.png`;
+    random[4] = Math.floor(Math.random() * 6) + 1;
+    dice5.src = `img/dice-${random[4]}.png`;
   }
 
   if (!document.querySelector('.dice-6').checked) {
-    randomSix = Math.floor(Math.random() * 6) + 1;
-    dice6.src = `img/dice-${randomSix}.png`;
+    random[5] = Math.floor(Math.random() * 6) + 1;
+    dice6.src = `img/dice-${random[5]}.png`;
   }
 }
 
 function save() {
-  console.log(diceOneArray[randomOne - 1]);
-  console.log(diceTwoArray[randomTwo - 1]);
-  console.log(diceThreeArray[randomThree - 1]);
-  console.log(diceFourArray[randomFour - 1]);
-  console.log(diceFiveArray[randomFive - 1]);
-  console.log(diceSixArray[randomSix - 1]);
+  for (let i = 0; i < random.length; i++) {
+    console.log(diceOneArray[random[i] - 1]);
+  }
 }
