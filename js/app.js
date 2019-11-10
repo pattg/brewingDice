@@ -30,28 +30,28 @@ function roll() {
   const dice5 = document.querySelector('.dice5');
   const dice6 = document.querySelector('.dice6');
 
-  if (!document.getElementById('dice-1').checked) {
+  if (!document.querySelector('.dice-1').checked) {
     randomOne = Math.floor(Math.random() * 6) + 1;
     dice1.src = `img/dice-${randomOne}.png`;
   }
-  if (!document.getElementById('dice-2').checked) {
+  if (!document.querySelector('.dice-2').checked) {
     randomTwo = Math.floor(Math.random() * 6) + 1;
     dice2.src = `img/dice-${randomTwo}.png`;
   }
-  if (!document.getElementById('dice-3').checked) {
+  if (!document.querySelector('.dice-3').checked) {
     randomThree = Math.floor(Math.random() * 6) + 1;
     dice3.src = `img/dice-${randomThree}.png`;
   }
-  if (!document.getElementById('dice-4').checked) {
+  if (!document.querySelector('.dice-4').checked) {
     randomFour = Math.floor(Math.random() * 6) + 1;
     dice4.src = `img/dice-${randomFour}.png`;
   }
-  if (!document.getElementById('dice-5').checked) {
+  if (!document.querySelector('.dice-5').checked) {
     randomFive = Math.floor(Math.random() * 6) + 1;
     dice5.src = `img/dice-${randomFive}.png`;
   }
 
-  if (!document.getElementById('dice-6').checked) {
+  if (!document.querySelector('.dice-6').checked) {
     randomSix = Math.floor(Math.random() * 6) + 1;
     dice6.src = `img/dice-${randomSix}.png`;
   }
