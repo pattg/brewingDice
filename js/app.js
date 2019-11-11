@@ -16,12 +16,46 @@ document.addEventListener(
 
 let random = [];
 
-const diceOneArray = ['01', '02', '03', '04', '05', '06'];
-const diceTwoArray = ['01', '02', '03', '04', '05', '06'];
-const diceThreeArray = ['01', '02', '03', '04', '05', '06'];
-const diceFourArray = ['01', '02', '03', '04', '05', '06'];
-const diceFiveArray = ['01', '02', '03', '04', '05', '06'];
-const diceSixArray = ['01', '02', '03', '04', '05', '06'];
+const diceMethod = [
+  'Upright - 30s Bloom - 60g Water',
+  'Inverted - No Bloom',
+  'Inverted - 30s bloom - 60g Water',
+  'Upright - No Bloom',
+  'Inverted - 30s Bloom - 30g Water',
+  'Upright - 30s Bloom - 30g Water'
+];
+const diceRatio = [
+  '24g Coffee - 200g Water',
+  'Your Choice',
+  '12g Coffee - 200g Water',
+  '15g Coffee - 250g Water',
+  '12g Coffee - 200g Water',
+  '24g Coffee - 200g Water (dilute to share)'
+];
+const diceGrind = [
+  'Coarse - 4min',
+  'Very Fine - 30s',
+  'Fine - 60s',
+  'Medium - 120s',
+  'Medium Fine - 90s',
+  'Your Choice'
+];
+const diceTemp = [
+  '80 deg',
+  '75 deg',
+  '95 deg',
+  '90 deg',
+  'Your Choice',
+  '85 deg'
+];
+const diceStir = [
+  '2x Stir right before pressing',
+  'Stir right before pressing',
+  'Stir before pressing',
+  'Stir one left, Stir one right before pressing',
+  'Your Choice',
+  'No Stir'
+];
 
 function roll() {
   const dice1 = document.querySelector('.dice1');
@@ -29,7 +63,6 @@ function roll() {
   const dice3 = document.querySelector('.dice3');
   const dice4 = document.querySelector('.dice4');
   const dice5 = document.querySelector('.dice5');
-  const dice6 = document.querySelector('.dice6');
 
   if (!document.querySelector('.dice-1').checked) {
     random[0] = Math.floor(Math.random() * 6) + 1;
@@ -50,16 +83,14 @@ function roll() {
   if (!document.querySelector('.dice-5').checked) {
     random[4] = Math.floor(Math.random() * 6) + 1;
     dice5.src = `img/dice-${random[4]}.png`;
-  }
-
-  if (!document.querySelector('.dice-6').checked) {
-    random[5] = Math.floor(Math.random() * 6) + 1;
-    dice6.src = `img/dice-${random[5]}.png`;
+    console.log(random);
   }
 }
 
 function save() {
-  for (let i = 0; i < random.length; i++) {
-    console.log(diceOneArray[random[i] - 1]);
-  }
+  console.log(diceMethod[random[0]]);
+  console.log(diceRatio[random[1]]);
+  console.log(diceGrind[random[2]]);
+  console.log(diceTemp[random[3]]);
+  console.log(diceStir[random[4]]);
 }
