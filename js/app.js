@@ -83,7 +83,6 @@ function roll() {
   if (!document.querySelector('.dice-5').checked) {
     random[4] = Math.floor(Math.random() * 6) + 1;
     dice5.src = `img/dice-${random[4]}.png`;
-    console.log(random);
   }
 }
 
