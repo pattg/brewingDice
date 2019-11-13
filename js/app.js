@@ -83,13 +83,14 @@ function roll() {
   if (!document.querySelector('.dice-5').checked) {
     random[4] = Math.floor(Math.random() * 6) + 1;
     dice5.src = `img/dice-${random[4]}.png`;
+    console.log(random);
   }
 }
 
 function save() {
-  console.log(diceMethod[random[0]]);
-  console.log(diceRatio[random[1]]);
-  console.log(diceGrind[random[2]]);
-  console.log(diceTemp[random[3]]);
-  console.log(diceStir[random[4]]);
+  console.log(diceMethod[random[0] - 1]);
+  console.log(diceRatio[random[1] - 1]);
+  console.log(diceGrind[random[2] - 1]);
+  console.log(diceTemp[random[3] - 1]);
+  console.log(diceStir[random[4] - 1]);
 }

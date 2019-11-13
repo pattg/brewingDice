@@ -33,5 +33,11 @@ body {
 .btn_roll {
   display: block;
   width: 100%;
-  color: red;
+  color: blue;
+}
+
+.btn_save {
+  display: block;
+  width: 100%;
+  color: green;
 }
